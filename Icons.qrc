@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icons/SideBar/SHS_Logo.png</file>
+        <file>Icons/Weather/Cloud.png</file>
+        <file>Icons/Weather/Drizzle.png</file>
+        <file>Icons/Weather/Mist.png</file>
+        <file>Icons/Weather/Rain.png</file>
+        <file>Icons/Weather/SHS_Logo.png</file>
+        <file>Icons/Weather/Snow.png</file>
+        <file>Icons/Weather/Sun.png</file>
+        <file>Icons/Weather/Thunderstorm.png</file>
+        <file>Icons/Weather/Weather_Clear.png</file>
+        <file>Icons/Weather/Weather_Clouds.png</file>
+        <file>Icons/Weather/Weather_Drizzle.png</file>
+        <file>Icons/Weather/Weather_Rain.png</file>
+        <file>Icons/Weather/Weather_Snow.png</file>
+        <file>Icons/Icons_Media_Player/audio_logo.png</file>
+        <file>Icons/Icons_Media_Player/audio_logo_muted.png</file>
+        <file>Icons/Icons_Media_Player/loop_logo.png</file>
+        <file>Icons/Icons_Media_Player/music-note-1275650_1920.png</file>
+        <file>Icons/Icons_Media_Player/next_logo.png</file>
+        <file>Icons/Icons_Media_Player/note-1314941_1920.png</file>
+        <file>Icons/Icons_Media_Player/note-1314942_1920.png</file>
+        <file>Icons/Icons_Media_Player/pause_logo.png</file>
+        <file>Icons/Icons_Media_Player/preview_logo.png</file>
+        <file>Icons/Icons_Media_Player/play_logo.png</file>
+        <file>Icons/Icons_Media_Player/audio_logo.ai</file>
+        <file>Icons/Icons_Media_Player/audio_logo_muted.ai</file>
+        <file>Icons/Icons_Media_Player/loop_logo.ai</file>
+        <file>Icons/Icons_Media_Player/next_logo.ai</file>
+        <file>Icons/Icons_Media_Player/pause_logo.ai</file>
+        <file>Icons/Icons_Media_Player/play_logo.ai</file>
+        <file>Icons/Icons_Media_Player/preview_logo.ai</file>
+        <file>Icons/Icons_Media_Player/bootstrap/play-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/skip-end-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/skip-start-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/volume-mute-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/volume-up-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/pause-fill.svg</file>
+        <file>Icons/Icons_Media_Player/bootstrap/arrow-repeat.svg</file>
+        <file>Icons/Lightning/Lightbulb.svg</file>
+        <file>Icons/Titlebar/x.svg</file>
+        <file>Icons/Titlebar/double_square.svg</file>
+        <file>Icons/Titlebar/square.svg</file>
+        <file>Icons/Titlebar/max.svg</file>
+    </qresource>
+</RCC>

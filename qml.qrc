@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BackgroundPage.qml</file>
+        <file>SideBar.qml</file>
+        <file>SensorChart.qml</file>
+        <file>WeatherForecast.qml</file>
+        <file>Settings.qml</file>
+        <file>Lightning.qml</file>
+        <file>UserCalendar.qml</file>
+        <file>UserCalendarAddEntrys.qml</file>
+        <file>LedController_Monochrome.qml</file>
+        <file>LedController.qml</file>
+        <file>LedController_blink.qml</file>
+        <file>LedController_RunningLight.qml</file>
+        <file>LedController_Pulsating.qml</file>
+        <file>LedController_Rainbow.qml</file>
+        <file>AudioPlayer.qml</file>
+        <file>AccessControl.qml</file>
+    </qresource>
+    <qresource prefix="/LedController"/>
+    <qresource prefix="/LedController" lang="AT"/>
+</RCC>

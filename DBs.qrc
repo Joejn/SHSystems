@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/SHSystems">
+        <file>DBs/calendar.db</file>
+        <file>DBs/sensors.db</file>
+    </qresource>
+</RCC>
