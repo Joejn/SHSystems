@@ -12,6 +12,7 @@
 #include "lighting.h"
 #include "config.h"
 #include "entertainment.h"
+#include "accescontrol.h"
 
 #include <QStringListModel>
 #include <QQmlContext>
@@ -39,6 +40,7 @@ int main(int argc, char *argv[])
     qmlRegisterType<Lighting>("com.SmartHome.Lighting", 1, 0, "Lighting");
     qmlRegisterType<Config>("com.SmartHome.Config", 1, 0, "Config");
     qmlRegisterType<Entertainment>("com.SmartHome.Entertainment", 1, 0, "Entertainment");
+    qmlRegisterType<AccesControl>("com.SmartHome.AccesControl", 1, 0, "AccesControl");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

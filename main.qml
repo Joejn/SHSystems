@@ -637,6 +637,7 @@ Window {
             sensorChart.color = "#ffffff";
             settings.color = "#ffffff";
             lightning.color = "#ffffff";
+            accessControl.color = "#ffffff";
             titleBarRightColor = "#ffffff"
             titleBarIconsColorNormal = "#000000"
         } else {
@@ -647,6 +648,7 @@ Window {
             sensorChart.color = "#3a3a3a";
             settings.color = "#3a3a3a";
             lightning.color = "#3a3a3a";
+            accessControl.color = "#3a3a3a";
             titleBarRightColor = "#3a3a3a"
             titleBarIconsColorNormal = "#ffffff"
         }
@@ -662,6 +664,7 @@ Window {
         ledController.changeTheme(theme);
         audioPlayer.changeTheme(theme);
         userCalendar.changeTheme(theme);
+        accessControl.changeTheme(theme);
     }
 }
 
