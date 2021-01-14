@@ -139,7 +139,7 @@ Item {
                 anchors.top: listViewHeader.bottom
                 anchors.leftMargin: 10
                 anchors.bottomMargin: 10
-                anchors.topMargin: 80
+                anchors.topMargin: 38
                 currentIndex: entryTabBar.currentIndex
 
                 ListView {

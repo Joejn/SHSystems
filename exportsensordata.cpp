@@ -11,7 +11,6 @@ ExportSensorData::ExportSensorData(QObject *parent) : QObject(parent)
     m_dbName = m_config.getData("db/name", false);
     m_dbUser = m_config.getData("db/user", false);
     m_db = new DbAdministration(this, m_dbHostname, m_dbName, m_dbUser, m_config.getData("db/password", true));
- // Kjkhjasdkhfjkask
     connect(m_db, SIGNAL(isConnectedChanged(const bool&)), this, SLOT(setIsConnected(const bool&)));
 }
 

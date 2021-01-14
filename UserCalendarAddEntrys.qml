@@ -46,7 +46,7 @@ Item {
             text: qsTr("Anmerkung")
             font.pointSize: 16
             anchors.top: textField_Title.bottom
-            anchors.topMargin: 30
+            anchors.topMargin: 16
             anchors.left: parent.left
             anchors.leftMargin: 10
             anchors.right: parent.right
