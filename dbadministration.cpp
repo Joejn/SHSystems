@@ -90,6 +90,7 @@ bool DbAdministration::setDataListFromDb(const QString &statement, const QString
         db.setDatabaseName(m_dbName);
         db.setUserName(m_user);
         db.setPassword(m_password);
+        db.setConnectOptions("connect_timeout=2");
 
         if(db.open()){
             QSqlQuery query(statement);

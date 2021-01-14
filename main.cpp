@@ -16,6 +16,7 @@
 
 #include <QStringListModel>
 #include <QQmlContext>
+#include <QIcon>
 
 #include <QQmlComponent>
 
@@ -27,6 +28,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QApplication app(argc, argv);
+
+    app.setWindowIcon(QIcon(":/Icons/SideBar/SHS_Logo.png"));
 
     QQuickStyle::setStyle("Material");
 

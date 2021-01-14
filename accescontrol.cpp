@@ -6,11 +6,6 @@
 
 AccesControl::AccesControl(QObject *parent) : QObject(parent)
 {
-    m_dbHostname = m_config.getData("db/hostname", false);
-    m_dbName = m_config.getData("db/name", false);
-    m_dbUser = m_config.getData("db/user", false);
-    m_db = new DbAdministration(this, m_dbHostname, m_dbName, m_dbUser, m_config.getData("db/password", true));
-
     m_hostName = m_config.getData("mqtt/hostname", false);
     m_port = (m_config.getData("mqtt/port", false)).toInt();
     m_username = m_config.getData("mqtt/username", false);
@@ -25,7 +20,14 @@ AccesControl::AccesControl(QObject *parent) : QObject(parent)
         m_client->connectToHost();
     }
 
+    m_dbHostname = m_config.getData("db/hostname", false);
+    m_dbName = m_config.getData("db/name", false);
+    m_dbUser = m_config.getData("db/user", false);
+    m_db = new DbAdministration(this, m_dbHostname, m_dbName, m_dbUser, m_config.getData("db/password", true));
+
     connect(m_db, SIGNAL(isConnectedChanged(const bool&)), this, SLOT(setIsConnected(const bool&)));
+
+    connect(this, SIGNAL(isConnectedChanged(const bool&)), this, SLOT(print()));
 
     connect(m_client, &QMqttClient::messageReceived, this, [this](const QByteArray &message, const QMqttTopicName &topic) {
         getAccesControlEntrys();
@@ -62,8 +64,15 @@ QList<QObject *> AccesControl::getAccesControlEntrys()
     return EntrysList;
 }
 
+void AccesControl::emitAccesControlEntrysChanged()
+{
+    getAccesControlEntrys();
+    emit accesControlEntrysChanged();
+}
+
 void AccesControl::setIsConnected(const bool &isConnected)
 {
+    qDebug() << "setIsConnected: " << (isConnected ? "true" : "false");
     m_isConnected = isConnected;
     emit isConnectedChanged(m_isConnected);
 }
@@ -75,4 +84,9 @@ void AccesControl::setTopic()
     if (!subscription) {
         qDebug() << "can't Subscribe topic";
     }
+}
+
+void AccesControl::print()
+{
+    qDebug() << "khkjhdfsjkfhasjkdhfk";
 }

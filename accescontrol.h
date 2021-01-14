@@ -15,10 +15,12 @@ class AccesControl : public QObject
 public:
     explicit AccesControl(QObject *parent = nullptr);
     Q_INVOKABLE QList<QObject *> getAccesControlEntrys();
+    Q_INVOKABLE void emitAccesControlEntrysChanged();
 
 public slots:
     void setIsConnected(const bool &isConnected);
     void setTopic();
+    void print();
 
 signals:
     void isConnectedChanged(const bool &isConnected);

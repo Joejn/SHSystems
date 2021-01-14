@@ -38,36 +38,10 @@ BackgroundPage {
 
     //////////////////////////////////////////////////////////////////////////////////
 
-    /* Timer{
-        id: timer_reconnect;
-        interval: 20000
-        running: false
-        repeat: true
-        onTriggered: creatListElement();
-    }
-
-     Connections{
-        target: lightning
-        onIsConnectedChanged:{
-            if(isConnected){
-                rectangle_main.enabled = true;
-                rectangle_overlay.visible = false;
-                timer_reconnect.running = false;
-            } else {
-                rectangle_main.enabled = false;
-                rectangle_overlay.visible = true;
-                timer_reconnect.running = true;
-
-            }
-        }
-    } */
-
     Rectangle {
         id: rectangle_main
         color: "#00ffffff"
         border.width: 0
-        anchors.right: button.left
-        anchors.bottom: button.top
         anchors.fill: parent
 
         Rectangle {
@@ -189,7 +163,7 @@ BackgroundPage {
 
             delegate: Rectangle{
                 id: listViewDelegate
-                width: parent.width
+                width: listView.width
                 height: 40
                 color: "transparent"
 
@@ -283,11 +257,40 @@ BackgroundPage {
     }
 
     Connections{
-       target: accessControl
-       onAccesControlEntrysChanged:{
-           listView.model = accessControl.getAccesControlEntrys();
-       }
-   }
+        target: accessControl
+        onAccesControlEntrysChanged:{
+            listView.model = accessControl.getAccesControlEntrys();
+        }
+    }
+
+    Timer{
+        id: timer_reconnect;
+        interval: 20000
+        running: false
+        repeat: true
+        onTriggered: accessControl.emitAccesControlEntrysChanged();
+    }
+
+    Connections{
+        target: accessControl
+        onIsConnectedChanged:{
+            console.log("onIsConnectedChanged")
+            if(isConnected){
+                rectangle_main.enabled = true;
+                rectangle_overlay.visible = false;
+                timer_reconnect.running = false;
+            } else {
+                rectangle_main.enabled = false;
+                rectangle_overlay.visible = true;
+                timer_reconnect.running = true;
+
+            }
+        }
+
+        Component.onCompleted: {
+            accessControl.getAccesControlEntrys();
+        }
+    }
 
     function changeTheme(theme){
         if(theme === "Dark"){
