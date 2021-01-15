@@ -19,17 +19,12 @@ public:
 
 public slots:
     void setIsConnected(const bool &isConnected);
-    void setTopic();
-    void print();
 
 signals:
     void isConnectedChanged(const bool &isConnected);
     void accesControlEntrysChanged();
 
 private:
-    QMqttClient *m_client;
-    QString m_hostName;
-    int m_port;
     QString m_username;
     DbAdministration *m_db;
     QString m_dbHostname;

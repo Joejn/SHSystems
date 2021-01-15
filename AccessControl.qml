@@ -266,7 +266,7 @@ BackgroundPage {
     Timer{
         id: timer_reconnect;
         interval: 20000
-        running: false
+        running: true
         repeat: true
         onTriggered: accessControl.emitAccesControlEntrysChanged();
     }
@@ -278,11 +278,9 @@ BackgroundPage {
             if(isConnected){
                 rectangle_main.enabled = true;
                 rectangle_overlay.visible = false;
-                timer_reconnect.running = false;
             } else {
                 rectangle_main.enabled = false;
                 rectangle_overlay.visible = true;
-                timer_reconnect.running = true;
 
             }
         }
