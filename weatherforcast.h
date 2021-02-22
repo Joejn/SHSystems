@@ -70,6 +70,7 @@ public:
 
     void translation(const QString &description, const int &day);
 
+
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
     Q_INVOKABLE void insertData();
@@ -80,6 +81,8 @@ public:
     Q_INVOKABLE QString getWeatherHumidity(const int &position);
     Q_INVOKABLE QString getWeatherDay(const int &position);
     Q_INVOKABLE QString getWeatherIcon(const int &position);
+
+    Q_INVOKABLE bool pingServer(QString ip);
 
 signals:
 

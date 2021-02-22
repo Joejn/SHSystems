@@ -283,34 +283,47 @@ BackgroundPage {
         }
     }
 
+    Timer{
+        id: timer_reconnect;
+        interval: 200000
+        running: true
+        repeat: true
+        onTriggered: getDate();
+    }
+
     function getDate(){
-        weatherForecast.insertData();
+        if(weatherForecast.pingServer("api.openweathermap.org")){
+            weatherForecast.insertData();
 
-        label_CurrentLocation.text = weatherForecast.getWeatherLocation();
-        label_CurrentDesciption.text = weatherForecast.getWeatherDescription(0);
-        label_CurrentTemperature.text = weatherForecast.getWeatherTemperature(0);
-        label_CurrentHumidity.text = weatherForecast.getWeatherHumidity(0);
-        image_currentWeather.source = weatherForecast.getWeatherIcon(0);
+            label_CurrentLocation.text = weatherForecast.getWeatherLocation();
+            label_CurrentDesciption.text = weatherForecast.getWeatherDescription(0);
+            label_CurrentTemperature.text = weatherForecast.getWeatherTemperature(0);
+            label_CurrentHumidity.text = weatherForecast.getWeatherHumidity(0);
+            image_currentWeather.source = weatherForecast.getWeatherIcon(0);
 
-        label_WeatherForcastDescription1.text = weatherForecast.getWeatherDescription(1);
-        label_WeatherForcastTemperature1.text = weatherForecast.getWeatherTemperature(1);
-        label_WeatherForcastDay1.text = weatherForecast.getWeatherDay(1);
-        image_WeatherForcast1.source = weatherForecast.getWeatherIcon(1);
+            label_WeatherForcastDescription1.text = weatherForecast.getWeatherDescription(1);
+            label_WeatherForcastTemperature1.text = weatherForecast.getWeatherTemperature(1);
+            label_WeatherForcastDay1.text = weatherForecast.getWeatherDay(1);
+            image_WeatherForcast1.source = weatherForecast.getWeatherIcon(1);
 
-        label_WeatherForcastDescription2.text = weatherForecast.getWeatherDescription(2);
-        label_WeatherForcastTemperature2.text = weatherForecast.getWeatherTemperature(2);
-        label_WeatherForcastDay2.text = weatherForecast.getWeatherDay(2);
-        image_WeatherForcast2.source = weatherForecast.getWeatherIcon(2);
+            label_WeatherForcastDescription2.text = weatherForecast.getWeatherDescription(2);
+            label_WeatherForcastTemperature2.text = weatherForecast.getWeatherTemperature(2);
+            label_WeatherForcastDay2.text = weatherForecast.getWeatherDay(2);
+            image_WeatherForcast2.source = weatherForecast.getWeatherIcon(2);
 
-        label_WeatherForcastDescription3.text = weatherForecast.getWeatherDescription(3);
-        label_WeatherForcastTemperature3.text = weatherForecast.getWeatherTemperature(3);
-        label_WeatherForcastDay3.text = weatherForecast.getWeatherDay(3);
-        image_WeatherForcast3.source = weatherForecast.getWeatherIcon(3);
+            label_WeatherForcastDescription3.text = weatherForecast.getWeatherDescription(3);
+            label_WeatherForcastTemperature3.text = weatherForecast.getWeatherTemperature(3);
+            label_WeatherForcastDay3.text = weatherForecast.getWeatherDay(3);
+            image_WeatherForcast3.source = weatherForecast.getWeatherIcon(3);
 
-        label_WeatherForcastDescription4.text = weatherForecast.getWeatherDescription(4);
-        label_WeatherForcastTemperature4.text = weatherForecast.getWeatherTemperature(4);
-        label_WeatherForcastDay4.text = weatherForecast.getWeatherDay(4);
-        image_WeatherForcast4.source = weatherForecast.getWeatherIcon(4);
+            label_WeatherForcastDescription4.text = weatherForecast.getWeatherDescription(4);
+            label_WeatherForcastTemperature4.text = weatherForecast.getWeatherTemperature(4);
+            label_WeatherForcastDay4.text = weatherForecast.getWeatherDay(4);
+            image_WeatherForcast4.source = weatherForecast.getWeatherIcon(4);
+        } else {
+
+            label_CurrentLocation.text = "Daten konnten nicht abgefragt werden";
+        }
     }
 
 }

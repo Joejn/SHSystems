@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QEventLoop>
 #include <QPixmap>
+#include <QProcess>
 
 #define NullGradKelvin -273.15
 
@@ -89,6 +90,25 @@ QJsonObject WeatherForcast::getWeatherObject()
 
 QJsonObject WeatherForcast::setWeatherObjectSave(){
     return this->weatherObjectSave;
+}
+
+bool WeatherForcast::pingServer(QString ip)
+{
+
+    qDebug() << "kjhdsfajkhfk" + ip;
+    QString cmd;
+
+    #if (defined (_WIN32) || defined (_WIN64))
+        cmd = "ping " + ip + " -n 1";
+    #else
+        cmd = "ping " + m_hostname + " -c 1 -W " + m_connectionTimeout;
+    #endif
+
+
+    if(QProcess::execute(cmd) == 0){
+        return true;
+    }
+    return false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
