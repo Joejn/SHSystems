@@ -663,8 +663,8 @@ Window {
         settings.changeTheme(theme);
         ledController.changeTheme(theme);
         audioPlayer.changeTheme(theme);
-        userCalendar.changeTheme(theme);
         accessControl.changeTheme(theme);
+        userCalendar.changeTheme(theme);
     }
 }
 
