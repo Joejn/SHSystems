@@ -1,9 +1,11 @@
 #include "config.h"
+#include <QDir>
 #include <QDebug>
 
 Config::Config(QObject *parent) : QObject(parent)
 {
-    m_configFile = "C:/Users/Qt/Desktop/config.conf";
+    m_configFile = QDir::currentPath() + "/config.conf";
+    qDebug() << "file_config: " << m_configFile;
     m_crypto.setKey(0xf26d13193f3fbd93);
     m_db = QSqlDatabase::addDatabase("QPSQL7");
     setDb();
