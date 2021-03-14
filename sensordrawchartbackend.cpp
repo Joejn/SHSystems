@@ -166,7 +166,8 @@ void SensorDrawChartBackend::set_sensorValues()
     m_sensorValues.first.clear();
     m_sensorValues.second.clear();
     QDateTime currentDateTime = QDateTime::currentDateTime();
-    QString statement = "SELECT * FROM " + m_tableName + " WHERE measurementdatetime BETWEEN '" + currentDateTime.addDays(-1).addSecs(-3600).toString("yyyy-MM-dd hh:mm") + "'::timestamp AND '" + currentDateTime.addSecs(-3600).toString("yyyy-MM-dd hh:mm") + "'::timestamp";
+    QString statement = "SELECT * FROM " + m_tableName + " WHERE measurementdatetime BETWEEN '" + currentDateTime.addDays(-1).toString("yyyy-MM-dd hh:mm") + "'::timestamp AND '" + currentDateTime.toString("yyyy-MM-dd hh:mm") + "'::timestamp";
+    qDebug() << statement;
     if(m_db->setDataListFromDb(statement, "0;1")){
         QStringList dateTime = m_db->getDataListFromDb(0);
         QStringList value = m_db->getDataListFromDb(1);
